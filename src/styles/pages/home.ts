@@ -1,9 +1,7 @@
-import { transform } from "next/dist/build/swc";
 import { styled } from "..";
 
 export const HomeContainer = styled("main", {
   display: "flex",
-  gap: "3rem",
   width: "100%",
   maxWidth: "calc(1180px + ((100vw - 1180px) / 2))",
   marginLeft: "auto",
@@ -13,7 +11,6 @@ export const HomeContainer = styled("main", {
 export const Product = styled("a", {
   background: "linear-gradient(100deg, #1ea484 0%, #7465d4 100%)",
   borderRadius: 8,
-  padding: "0.25rem",
   cursor: "pointer",
   position: "relative",
   display: "flex",
