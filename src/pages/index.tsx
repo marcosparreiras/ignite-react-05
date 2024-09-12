@@ -11,7 +11,7 @@ interface HomeProps {
     id: string;
     name: string;
     imageUrl: string;
-    price: number | null;
+    price: string;
   }[];
 }
 
@@ -30,12 +30,7 @@ export default function Home(props: HomeProps) {
             <Image src={product.imageUrl} width={520} height={480} alt="" />
             <footer>
               <strong>{product.name}</strong>
-              <span>
-                {product.price?.toLocaleString("pt-BR", {
-                  style: "currency",
-                  currency: "BRL",
-                })}
-              </span>
+              <span>{product.price}</span>
             </footer>
           </Product>
         ))}
@@ -54,7 +49,12 @@ export const getStaticProps: GetStaticProps = async () => {
       id: product.id,
       name: product.name,
       imageUrl: product.images[0],
-      price: price.unit_amount ? price.unit_amount / 100 : null,
+      price: price.unit_amount
+        ? (price.unit_amount / 100).toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+          })
+        : "Não definido",
     };
   });
   return {
