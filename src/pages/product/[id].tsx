@@ -11,7 +11,14 @@ export default function Product() {
 
   return (
     <ProductContainer>
-      <ImageContainer></ImageContainer>
+      <ImageContainer>
+        {/* <Image
+          src="https://github.com/marcosparreiras.png"
+          height={"250"}
+          width={"250"}
+          alt=""
+        /> */}
+      </ImageContainer>
 
       <ProductDetails>
         <h1>Camiseta X</h1>
